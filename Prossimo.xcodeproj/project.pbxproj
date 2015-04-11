@@ -31,6 +31,8 @@
 		F1E8A6821AD98FE400F20A2F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1E8A6811AD98FE400F20A2F /* SystemConfiguration.framework */; };
 		F1E8A6841AD98FF400F20A2F /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F1E8A6831AD98FF400F20A2F /* libz.dylib */; };
 		F1E8A6861AD98FFF00F20A2F /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F1E8A6851AD98FFF00F20A2F /* libsqlite3.dylib */; };
+		F1E8A68A1AD9A7DF00F20A2F /* DiscoveryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1E8A6891AD9A7DF00F20A2F /* DiscoveryViewController.m */; };
+		F1E8A68D1AD9A84200F20A2F /* BarberDiscoveryDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F1E8A68C1AD9A84200F20A2F /* BarberDiscoveryDataModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +76,10 @@
 		F1E8A6811AD98FE400F20A2F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		F1E8A6831AD98FF400F20A2F /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		F1E8A6851AD98FFF00F20A2F /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		F1E8A6881AD9A7DF00F20A2F /* DiscoveryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoveryViewController.h; sourceTree = "<group>"; };
+		F1E8A6891AD9A7DF00F20A2F /* DiscoveryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscoveryViewController.m; sourceTree = "<group>"; };
+		F1E8A68B1AD9A84200F20A2F /* BarberDiscoveryDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarberDiscoveryDataModel.h; sourceTree = "<group>"; };
+		F1E8A68C1AD9A84200F20A2F /* BarberDiscoveryDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarberDiscoveryDataModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +142,10 @@
 				F1E8A6431AD98E3500F20A2F /* AppDelegate.m */,
 				F1E8A6451AD98E3500F20A2F /* ViewController.h */,
 				F1E8A6461AD98E3500F20A2F /* ViewController.m */,
+				F1E8A6881AD9A7DF00F20A2F /* DiscoveryViewController.h */,
+				F1E8A6891AD9A7DF00F20A2F /* DiscoveryViewController.m */,
+				F1E8A68B1AD9A84200F20A2F /* BarberDiscoveryDataModel.h */,
+				F1E8A68C1AD9A84200F20A2F /* BarberDiscoveryDataModel.m */,
 				F1E8A6481AD98E3500F20A2F /* Main.storyboard */,
 				F1E8A64B1AD98E3500F20A2F /* Images.xcassets */,
 				F1E8A64D1AD98E3500F20A2F /* LaunchScreen.xib */,
@@ -252,6 +262,7 @@
 				TargetAttributes = {
 					F1E8A63A1AD98E3400F20A2F = {
 						CreatedOnToolsVersion = 6.3;
+						DevelopmentTeam = 3L6C8AWWAU;
 					};
 					F1E8A6531AD98E3500F20A2F = {
 						CreatedOnToolsVersion = 6.3;
@@ -303,9 +314,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1E8A68D1AD9A84200F20A2F /* BarberDiscoveryDataModel.m in Sources */,
 				F1E8A6471AD98E3500F20A2F /* ViewController.m in Sources */,
 				F1E8A6441AD98E3500F20A2F /* AppDelegate.m in Sources */,
 				F1E8A6411AD98E3500F20A2F /* main.m in Sources */,
+				F1E8A68A1AD9A7DF00F20A2F /* DiscoveryViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,7 +396,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -420,7 +433,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -431,6 +444,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Prossimo/parse-library-1",
@@ -439,6 +454,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -446,6 +462,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Prossimo/parse-library-1",
@@ -454,6 +472,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

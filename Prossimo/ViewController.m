@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import <Parse/Parse.h>
+
 @interface ViewController ()
 
 @end
@@ -16,6 +18,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    PFUser *user = [PFUser user];
+    user.username = @"Ryan Barber";
+    user.password = @"foobar";
+    NSLog(@"%@", user.parseClassName);
+    //[user signUp];
+    //[user save];
 }
 
 - (void)didReceiveMemoryWarning {
