@@ -33,6 +33,8 @@
 		F1E8A6861AD98FFF00F20A2F /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F1E8A6851AD98FFF00F20A2F /* libsqlite3.dylib */; };
 		F1E8A68A1AD9A7DF00F20A2F /* DiscoveryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1E8A6891AD9A7DF00F20A2F /* DiscoveryViewController.m */; };
 		F1E8A68D1AD9A84200F20A2F /* BarberDiscoveryDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F1E8A68C1AD9A84200F20A2F /* BarberDiscoveryDataModel.m */; };
+		F1E8A6901AD9CD1500F20A2F /* BarberDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1E8A68F1AD9CD1500F20A2F /* BarberDetailViewController.m */; };
+		F1E8A6951AD9CD7600F20A2F /* BarberDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F1E8A6941AD9CD7600F20A2F /* BarberDetailModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +82,10 @@
 		F1E8A6891AD9A7DF00F20A2F /* DiscoveryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscoveryViewController.m; sourceTree = "<group>"; };
 		F1E8A68B1AD9A84200F20A2F /* BarberDiscoveryDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarberDiscoveryDataModel.h; sourceTree = "<group>"; };
 		F1E8A68C1AD9A84200F20A2F /* BarberDiscoveryDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarberDiscoveryDataModel.m; sourceTree = "<group>"; };
+		F1E8A68E1AD9CD1500F20A2F /* BarberDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarberDetailViewController.h; sourceTree = "<group>"; };
+		F1E8A68F1AD9CD1500F20A2F /* BarberDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarberDetailViewController.m; sourceTree = "<group>"; };
+		F1E8A6931AD9CD7600F20A2F /* BarberDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarberDetailModel.h; sourceTree = "<group>"; };
+		F1E8A6941AD9CD7600F20A2F /* BarberDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarberDetailModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,10 +148,8 @@
 				F1E8A6431AD98E3500F20A2F /* AppDelegate.m */,
 				F1E8A6451AD98E3500F20A2F /* ViewController.h */,
 				F1E8A6461AD98E3500F20A2F /* ViewController.m */,
-				F1E8A6881AD9A7DF00F20A2F /* DiscoveryViewController.h */,
-				F1E8A6891AD9A7DF00F20A2F /* DiscoveryViewController.m */,
-				F1E8A68B1AD9A84200F20A2F /* BarberDiscoveryDataModel.h */,
-				F1E8A68C1AD9A84200F20A2F /* BarberDiscoveryDataModel.m */,
+				F1E8A6911AD9CD2A00F20A2F /* DiscoveryVC */,
+				F1E8A6921AD9CD3E00F20A2F /* Barber Detail */,
 				F1E8A6481AD98E3500F20A2F /* Main.storyboard */,
 				F1E8A64B1AD98E3500F20A2F /* Images.xcassets */,
 				F1E8A64D1AD98E3500F20A2F /* LaunchScreen.xib */,
@@ -211,6 +215,28 @@
 				F1E8A6641AD98F0F00F20A2F /* parse-library-1 */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F1E8A6911AD9CD2A00F20A2F /* DiscoveryVC */ = {
+			isa = PBXGroup;
+			children = (
+				F1E8A6881AD9A7DF00F20A2F /* DiscoveryViewController.h */,
+				F1E8A6891AD9A7DF00F20A2F /* DiscoveryViewController.m */,
+				F1E8A68B1AD9A84200F20A2F /* BarberDiscoveryDataModel.h */,
+				F1E8A68C1AD9A84200F20A2F /* BarberDiscoveryDataModel.m */,
+			);
+			name = DiscoveryVC;
+			sourceTree = "<group>";
+		};
+		F1E8A6921AD9CD3E00F20A2F /* Barber Detail */ = {
+			isa = PBXGroup;
+			children = (
+				F1E8A68E1AD9CD1500F20A2F /* BarberDetailViewController.h */,
+				F1E8A68F1AD9CD1500F20A2F /* BarberDetailViewController.m */,
+				F1E8A6931AD9CD7600F20A2F /* BarberDetailModel.h */,
+				F1E8A6941AD9CD7600F20A2F /* BarberDetailModel.m */,
+			);
+			name = "Barber Detail";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -315,8 +341,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1E8A68D1AD9A84200F20A2F /* BarberDiscoveryDataModel.m in Sources */,
+				F1E8A6951AD9CD7600F20A2F /* BarberDetailModel.m in Sources */,
 				F1E8A6471AD98E3500F20A2F /* ViewController.m in Sources */,
 				F1E8A6441AD98E3500F20A2F /* AppDelegate.m in Sources */,
+				F1E8A6901AD9CD1500F20A2F /* BarberDetailViewController.m in Sources */,
 				F1E8A6411AD98E3500F20A2F /* main.m in Sources */,
 				F1E8A68A1AD9A7DF00F20A2F /* DiscoveryViewController.m in Sources */,
 			);
