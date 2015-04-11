@@ -22,9 +22,12 @@
     PFUser *user = [PFUser user];
     user.username = @"Ryan Barber";
     user.password = @"foobar";
+    user[@"position"] = [PFGeoPoint geoPointWithLatitude:1.0 longitude:1.0];
+    user[@"isBarber"] = [NSNumber numberWithBool:YES];
+    user[@"barberRating"] = [NSNumber numberWithInt:2];
     NSLog(@"%@", user.parseClassName);
-    //[user signUp];
-    //[user save];
+    [user signUp];
+    [user save];
 }
 
 - (void)didReceiveMemoryWarning {
