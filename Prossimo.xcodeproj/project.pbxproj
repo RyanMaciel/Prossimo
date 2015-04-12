@@ -36,6 +36,8 @@
 		F1E8A6901AD9CD1500F20A2F /* BarberDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1E8A68F1AD9CD1500F20A2F /* BarberDetailViewController.m */; };
 		F1E8A6951AD9CD7600F20A2F /* BarberDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F1E8A6941AD9CD7600F20A2F /* BarberDetailModel.m */; };
 		F1E8A6981AD9E9E900F20A2F /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1E8A6971AD9E9E900F20A2F /* LoginViewController.m */; };
+		F1E8A69B1ADA321800F20A2F /* signin.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F1E8A69A1ADA321800F20A2F /* signin.jpg */; };
+		F1E8A69E1ADA434300F20A2F /* Element Background Original.png in Resources */ = {isa = PBXBuildFile; fileRef = F1E8A69D1ADA434300F20A2F /* Element Background Original.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +91,8 @@
 		F1E8A6941AD9CD7600F20A2F /* BarberDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarberDetailModel.m; sourceTree = "<group>"; };
 		F1E8A6961AD9E9E900F20A2F /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		F1E8A6971AD9E9E900F20A2F /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		F1E8A69A1ADA321800F20A2F /* signin.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = signin.jpg; sourceTree = "<group>"; };
+		F1E8A69D1ADA434300F20A2F /* Element Background Original.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Element Background Original.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +151,7 @@
 		F1E8A63D1AD98E3500F20A2F /* Prossimo */ = {
 			isa = PBXGroup;
 			children = (
+				F1E8A69C1ADA321E00F20A2F /* images */,
 				F1E8A6421AD98E3500F20A2F /* AppDelegate.h */,
 				F1E8A6431AD98E3500F20A2F /* AppDelegate.m */,
 				F1E8A6451AD98E3500F20A2F /* ViewController.h */,
@@ -252,6 +257,15 @@
 			name = login;
 			sourceTree = "<group>";
 		};
+		F1E8A69C1ADA321E00F20A2F /* images */ = {
+			isa = PBXGroup;
+			children = (
+				F1E8A69D1ADA434300F20A2F /* Element Background Original.png */,
+				F1E8A69A1ADA321800F20A2F /* signin.jpg */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -335,7 +349,9 @@
 			files = (
 				F1E8A64A1AD98E3500F20A2F /* Main.storyboard in Resources */,
 				F1E8A64F1AD98E3500F20A2F /* LaunchScreen.xib in Resources */,
+				F1E8A69B1ADA321800F20A2F /* signin.jpg in Resources */,
 				F1E8A64C1AD98E3500F20A2F /* Images.xcassets in Resources */,
+				F1E8A69E1ADA434300F20A2F /* Element Background Original.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,7 +454,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -475,7 +491,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -493,7 +509,7 @@
 					"$(PROJECT_DIR)/Prossimo/parse-library-1",
 				);
 				INFOPLIST_FILE = Prossimo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -511,7 +527,7 @@
 					"$(PROJECT_DIR)/Prossimo/parse-library-1",
 				);
 				INFOPLIST_FILE = Prossimo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
