@@ -257,8 +257,8 @@
 		F1E8A6921AD9CD3E00F20A2F /* Barber Detail */ = {
 			isa = PBXGroup;
 			children = (
-				F1E8A68F1AD9CD1500F20A2F /* BarberDetailViewController.m */,
 				F1E8A68E1AD9CD1500F20A2F /* BarberDetailViewController.h */,
+				F1E8A68F1AD9CD1500F20A2F /* BarberDetailViewController.m */,
 				F1E8A6931AD9CD7600F20A2F /* BarberDetailModel.h */,
 				F1E8A6941AD9CD7600F20A2F /* BarberDetailModel.m */,
 			);

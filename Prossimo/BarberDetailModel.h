@@ -7,7 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Parse/Parse.h>
+
+@protocol AppointmentDownloadDelegate <NSObject>
+
+-(void)appointmentsLoaded:(NSArray*)appointments;
+
+@end
 
 @interface BarberDetailModel : NSObject
-
+@property(assign, nonatomic)id<AppointmentDownloadDelegate> downloadDelegate;
+-(id)initWithBarber:(PFObject*)barber;
 @end

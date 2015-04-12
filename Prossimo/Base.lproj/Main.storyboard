@@ -107,7 +107,7 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zYN-xL-KWi">
-                                <rect key="frame" x="227" y="245" width="82" height="30"/>
+                                <rect key="frame" x="245" y="264" width="82" height="30"/>
                                 <state key="normal" title="Submit">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -121,6 +121,7 @@
                             <constraint firstAttribute="centerX" secondItem="wy3-mQ-WyM" secondAttribute="centerX" id="2OR-qb-Sxe"/>
                         </constraints>
                     </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="emailField" destination="wy3-mQ-WyM" id="r8H-Bj-eeC"/>

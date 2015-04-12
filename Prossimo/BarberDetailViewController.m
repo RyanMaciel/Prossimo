@@ -10,13 +10,28 @@
 
 #import "BarberDetailViewController.h"
 
-@interface BarberDetailView : UIView
+@class BarberDetailView;
 
+@protocol BarberDetailViewInterationDelegate <NSObject>
+-(void)barberDetailViewTapped:(BarberDetailView*)view;
+
+@end
+
+@interface BarberDetailView : UIView
+@property(assign, nonatomic)id<BarberDetailViewInterationDelegate> interactionDelegate;
 @end
 @implementation BarberDetailView
 
+-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
+    [self.interactionDelegate barberDetailViewTapped:self];
+}
+
 -(id)initWithFrame:(CGRect)frame labelString:(NSString*)string{
     if(self = [super initWithFrame:frame]){
+        
+        self.layer.borderWidth = 0.5;
+        self.layer.borderColor = [UIColor grayColor].CGColor;
+        
         UILabel *timeLabel = [[UILabel alloc] init];
         timeLabel.text = string;
         [timeLabel sizeToFit];
@@ -27,37 +42,56 @@
 }
 
 @end
-@interface BarberDetailViewController ()
+
+#import "BarberDetailModel.h"
+
+@interface BarberDetailViewController ()<AppointmentDownloadDelegate, BarberDetailViewInterationDelegate>
 -(void)setUpLabels;
 -(void)addImage;
--(void)setUpBottom;
+-(void)setUpBottomWithAppointments:(NSArray *)appointment;
 -(NSString*)stringTime:(NSDate*)date;
 
-//An array of PFObjects of the availiable times.
-@property(strong, nonatomic)NSArray *availableTimes;
+@property(strong, nonatomic)BarberDetailModel *detailModel;
 @end
 
 @implementation BarberDetailViewController
+
+-(void)barberDetailViewTapped:(BarberDetailView *)view{
+    [self performSegueWithIdentifier:@"schedule" sender:self];
+}
+
+-(void)appointmentsLoaded:(NSArray *)appointments{
+    [self setUpBottomWithAppointments:appointments];
+}
 
 -(NSString*)stringTime:(NSDate*)date{
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSDateComponents *components = [calendar components:(NSCalendarUnitHour | NSCalendarUnitMinute) fromDate:date];
     NSInteger hour = [components hour];
     NSInteger minute = [components minute];
-    return [NSString stringWithFormat:@"%i:%i", hour, minute];
+    return minute < 10 ? [NSString stringWithFormat:@"%li:%li0", (long)hour, (long)minute] : [NSString stringWithFormat:@"%li:%li", (long)hour, (long)minute];
 }
--(void)setUpBottom{
+-(void)setUpBottomWithAppointments:(NSArray *)appointments{
+    
+    UILabel *available = [[UILabel alloc] init];
+    available.text = @"Available Times:";
+    available.textColor = [UIColor grayColor];
+    [available sizeToFit];
+    available.center = CGPointMake(self.view.center.x, 200 - available.frame.size.height/2);
+    [self.view addSubview:available];
+    
     UIScrollView *scroller = [[UIScrollView alloc] init];
     scroller.frame = CGRectMake(0, 200, self.view.frame.size.width, self.view.frame.size.height-200);
     BarberDetailView *timeView;
-    for(int i = 0; i < self.availableTimes.count; i++){
-        PFObject *time = self.availableTimes[i];
+    for(int i = 0; i < appointments.count; i++){
+        PFObject *time = appointments[i];
         
         
-        
-        timeView = [[BarberDetailView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 30) labelString:[NSString stringWithFormat:@"%@ - %@", [self stringTime:time[@"startTime"]], [self stringTime:time[@"endTime"]]]];
-        timeView.center = CGPointMake(self.view.center.x, scroller.frame.origin.y + timeView.frame.size.height/2 + timeView.frame.size.height * i);
+        timeView = [[BarberDetailView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 70) labelString:[self stringTime:time[@"startDate"]]];
+        timeView.center = CGPointMake(self.view.center.x, timeView.frame.size.height/2 + timeView.frame.size.height * i);
+        timeView.interactionDelegate = self;
         [scroller addSubview:timeView];
+        [self.view addSubview:scroller];
     }
     
     scroller.contentSize = CGSizeMake(self.view.frame.size.width, timeView.frame.origin.y + timeView.frame.size.height);
@@ -95,7 +129,12 @@
     
     [self addImage];
     [self setUpLabels];
-    [self setUpBottom]; 
+    
+    //set up the model.
+    self.detailModel = [[BarberDetailModel alloc] initWithBarber:self.barber];
+    self.detailModel.downloadDelegate = self;
+    
+    
     //[self sendRequest];
     
     // Do any additional setup after loading the view.

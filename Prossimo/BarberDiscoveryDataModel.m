@@ -25,7 +25,7 @@
         
         #warning limit miles.
         //limit the query to 40 miles;
-        [barberQuery whereKey:@"position" nearGeoPoint:[PFGeoPoint geoPointWithLatitude:coordinate.latitude longitude:coordinate.longitude]];
+        //[barberQuery whereKey:@"position" nearGeoPoint:[PFGeoPoint geoPointWithLatitude:coordinate.latitude longitude:coordinate.longitude]];
 
         
         [barberQuery whereKey:@"isBarber" equalTo:[NSNumber numberWithBool:YES]];

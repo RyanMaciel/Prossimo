@@ -35,6 +35,9 @@
         newUser.username = self.usernameField.text;
         if(self.isBarber){
             newUser[@"isBarber"] = [NSNumber numberWithBool:YES];
+            //10-5.
+            newUser[@"barberOpen"] = [NSNumber numberWithInt:10];
+            newUser[@"barberClosed"] = [NSNumber numberWithInt:17];
         }
         [newUser signUpInBackgroundWithBlock:^(BOOL success, NSError *error){
             
@@ -74,7 +77,7 @@
     NSDictionary* info = [aNotification userInfo];
     CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
     [UIView animateWithDuration:1 animations:^(){
-        self.view.center = CGPointMake(self.view.center.x, self.view.center.y - kbSize.height/2);
+        self.view.center = CGPointMake(self.view.center.x, self.view.center.y - kbSize.height);
     }];
 }
 
@@ -82,7 +85,7 @@
     NSDictionary* info = [aNotification userInfo];
     CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
     [UIView animateWithDuration:1 animations:^(){
-        self.view.center = CGPointMake(self.view.center.x, self.view.center.y + kbSize.height/2);
+        self.view.center = CGPointMake(self.view.center.x, self.view.center.y + kbSize.height);
     }];
 }
 

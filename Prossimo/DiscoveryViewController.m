@@ -132,9 +132,9 @@
 
 -(void)discoveryLoaderFoundBarbers:(NSArray *)barbers{
     BarberView *bView;
-    for(int i = 0; i < 100; i++){
+    for(int i = 0; i < barbers.count; i++){
         
-        PFObject *barber = barbers[0];
+        PFObject *barber = barbers[i];
         bView = [[BarberView alloc] initWithBarber:barber location:[[CLLocation alloc] initWithLatitude:0 longitude:0].coordinate];
         bView.center = CGPointMake([[UIScreen mainScreen] bounds].size.width/2, 5 + 0.5 * bView.frame.size.height/2 + bView.frame.size.height * i);
         bView.touchDelegate = self;

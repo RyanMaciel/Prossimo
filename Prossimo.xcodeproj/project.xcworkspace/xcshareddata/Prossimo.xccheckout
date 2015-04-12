@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>C64FF617-0F8D-4E6C-9D60-7859C45B6B8F</string>
 	<key>IDESourceControlProjectName</key>
-	<string>Prossimo</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>DC26F95A89F1670D817542AAB7C5AB9EFF351281</key>
 		<string>https://github.com/RyanMaciel/Prossimo.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Prossimo.xcodeproj</string>
+	<string>Prossimo.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>DC26F95A89F1670D817542AAB7C5AB9EFF351281</key>
