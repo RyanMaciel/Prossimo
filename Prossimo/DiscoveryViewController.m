@@ -180,7 +180,9 @@
     [self.navigationController.navigationBar setTranslucent:NO];
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     self.view.backgroundColor = [UIColor grayColor];
-
+    [self.navigationController.navigationBar
+     setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+    self.navigationItem.title = @"Discover";
 }
 
 

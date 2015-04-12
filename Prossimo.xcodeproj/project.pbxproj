@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F1D911021ADA751A0003FA80 /* StartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1D911011ADA751A0003FA80 /* StartViewController.m */; };
+		F1D911051ADA78030003FA80 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1D911041ADA78030003FA80 /* CoreImage.framework */; };
 		F1E8A6411AD98E3500F20A2F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F1E8A6401AD98E3500F20A2F /* main.m */; };
 		F1E8A6441AD98E3500F20A2F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F1E8A6431AD98E3500F20A2F /* AppDelegate.m */; };
 		F1E8A6471AD98E3500F20A2F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1E8A6461AD98E3500F20A2F /* ViewController.m */; };
@@ -51,6 +53,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F1D911001ADA751A0003FA80 /* StartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartViewController.h; sourceTree = "<group>"; };
+		F1D911011ADA751A0003FA80 /* StartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartViewController.m; sourceTree = "<group>"; };
+		F1D911041ADA78030003FA80 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		F1E8A63B1AD98E3500F20A2F /* Prossimo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Prossimo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1E8A63F1AD98E3500F20A2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F1E8A6401AD98E3500F20A2F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -100,6 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1D911051ADA78030003FA80 /* CoreImage.framework in Frameworks */,
 				F1E8A6861AD98FFF00F20A2F /* libsqlite3.dylib in Frameworks */,
 				F1E8A6841AD98FF400F20A2F /* libz.dylib in Frameworks */,
 				F1E8A6821AD98FE400F20A2F /* SystemConfiguration.framework in Frameworks */,
@@ -130,9 +136,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F1D911031ADA75300003FA80 /* Start */ = {
+			isa = PBXGroup;
+			children = (
+				F1D911001ADA751A0003FA80 /* StartViewController.h */,
+				F1D911011ADA751A0003FA80 /* StartViewController.m */,
+			);
+			name = Start;
+			sourceTree = "<group>";
+		};
 		F1E8A6321AD98E3400F20A2F = {
 			isa = PBXGroup;
 			children = (
+				F1D911041ADA78030003FA80 /* CoreImage.framework */,
 				F1E8A63D1AD98E3500F20A2F /* Prossimo */,
 				F1E8A6571AD98E3500F20A2F /* ProssimoTests */,
 				F1E8A63C1AD98E3500F20A2F /* Products */,
@@ -156,6 +172,7 @@
 				F1E8A6431AD98E3500F20A2F /* AppDelegate.m */,
 				F1E8A6451AD98E3500F20A2F /* ViewController.h */,
 				F1E8A6461AD98E3500F20A2F /* ViewController.m */,
+				F1D911031ADA75300003FA80 /* Start */,
 				F1E8A6991AD9E9EE00F20A2F /* login */,
 				F1E8A6911AD9CD2A00F20A2F /* DiscoveryVC */,
 				F1E8A6921AD9CD3E00F20A2F /* Barber Detail */,
@@ -240,8 +257,8 @@
 		F1E8A6921AD9CD3E00F20A2F /* Barber Detail */ = {
 			isa = PBXGroup;
 			children = (
-				F1E8A68E1AD9CD1500F20A2F /* BarberDetailViewController.h */,
 				F1E8A68F1AD9CD1500F20A2F /* BarberDetailViewController.m */,
+				F1E8A68E1AD9CD1500F20A2F /* BarberDetailViewController.h */,
 				F1E8A6931AD9CD7600F20A2F /* BarberDetailModel.h */,
 				F1E8A6941AD9CD7600F20A2F /* BarberDetailModel.m */,
 			);
@@ -372,6 +389,7 @@
 				F1E8A6981AD9E9E900F20A2F /* LoginViewController.m in Sources */,
 				F1E8A68D1AD9A84200F20A2F /* BarberDiscoveryDataModel.m in Sources */,
 				F1E8A6951AD9CD7600F20A2F /* BarberDetailModel.m in Sources */,
+				F1D911021ADA751A0003FA80 /* StartViewController.m in Sources */,
 				F1E8A6471AD98E3500F20A2F /* ViewController.m in Sources */,
 				F1E8A6441AD98E3500F20A2F /* AppDelegate.m in Sources */,
 				F1E8A6901AD9CD1500F20A2F /* BarberDetailViewController.m in Sources */,
@@ -587,6 +605,7 @@
 				F1E8A6601AD98E3500F20A2F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F1E8A6611AD98E3500F20A2F /* Build configuration list for PBXNativeTarget "ProssimoTests" */ = {
 			isa = XCConfigurationList;
@@ -595,6 +614,7 @@
 				F1E8A6631AD98E3500F20A2F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

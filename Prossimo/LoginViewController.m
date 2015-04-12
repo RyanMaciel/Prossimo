@@ -33,6 +33,9 @@
         newUser.password = self.passwordField.text;
         newUser.email = self.emailField.text;
         newUser.username = self.usernameField.text;
+        if(self.isBarber){
+            newUser[@"isBarber"] = [NSNumber numberWithBool:YES];
+        }
         [newUser signUpInBackgroundWithBlock:^(BOOL success, NSError *error){
             
             

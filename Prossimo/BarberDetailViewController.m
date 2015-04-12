@@ -95,7 +95,7 @@
     
     [self addImage];
     [self setUpLabels];
-    [self setUpBottom];
+    [self setUpBottom]; 
     //[self sendRequest];
     
     // Do any additional setup after loading the view.
