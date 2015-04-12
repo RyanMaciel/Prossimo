@@ -6,14 +6,81 @@
 //  Copyright (c) 2015 Prossimo. All rights reserved.
 //
 
+
+
 #import "BarberDetailViewController.h"
 
-@interface BarberDetailViewController ()
+@interface BarberDetailView : UIView
 
+@end
+@implementation BarberDetailView
+
+-(id)initWithFrame:(CGRect)frame labelString:(NSString*)string{
+    if(self = [super initWithFrame:frame]){
+        UILabel *timeLabel = [[UILabel alloc] init];
+        timeLabel.text = string;
+        [timeLabel sizeToFit];
+        timeLabel.center = CGPointMake(10 + timeLabel.frame.size.width/2, self.center.y);
+        [self addSubview:timeLabel];
+    }
+    return self;
+}
+
+@end
+@interface BarberDetailViewController ()
+-(void)setUpLabels;
+-(void)addImage;
+-(void)setUpBottom;
+-(NSString*)stringTime:(NSDate*)date;
+
+//An array of PFObjects of the availiable times.
+@property(strong, nonatomic)NSArray *availableTimes;
 @end
 
 @implementation BarberDetailViewController
 
+-(NSString*)stringTime:(NSDate*)date{
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSDateComponents *components = [calendar components:(NSCalendarUnitHour | NSCalendarUnitMinute) fromDate:date];
+    NSInteger hour = [components hour];
+    NSInteger minute = [components minute];
+    return [NSString stringWithFormat:@"%i:%i", hour, minute];
+}
+-(void)setUpBottom{
+    UIScrollView *scroller = [[UIScrollView alloc] init];
+    scroller.frame = CGRectMake(0, 200, self.view.frame.size.width, self.view.frame.size.height-200);
+    BarberDetailView *timeView;
+    for(int i = 0; i < self.availableTimes.count; i++){
+        PFObject *time = self.availableTimes[i];
+        
+        
+        
+        timeView = [[BarberDetailView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 30) labelString:[NSString stringWithFormat:@"%@ - %@", [self stringTime:time[@"startTime"]], [self stringTime:time[@"endTime"]]]];
+        timeView.center = CGPointMake(self.view.center.x, scroller.frame.origin.y + timeView.frame.size.height/2 + timeView.frame.size.height * i);
+        [scroller addSubview:timeView];
+    }
+    
+    scroller.contentSize = CGSizeMake(self.view.frame.size.width, timeView.frame.origin.y + timeView.frame.size.height);
+    
+}
+
+-(void)addImage{
+    UIImageView *userImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"signin.jpg"]];
+    userImage.frame = CGRectMake(0, 0, 100, 100);
+    userImage.center = CGPointMake(self.view.center.x, 10 + userImage.frame.size.height/2);
+    userImage.layer.cornerRadius = userImage.frame.size.width/2;
+    userImage.clipsToBounds = YES;
+    [self.view addSubview:userImage];
+}
+-(void)setUpLabels{
+    UILabel *nameLabel = [[UILabel alloc] init];
+    nameLabel.frame = CGRectMake(0, 0, 100, 100);
+    nameLabel.text = self.barber[@"username"];
+    nameLabel.font = [nameLabel.font fontWithSize:20];
+    [nameLabel sizeToFit];
+    nameLabel.center = CGPointMake(self.view.center.x, 130);
+    [self.view addSubview:nameLabel];
+}
 -(IBAction)sendRequest{
     [PFCloud callFunctionInBackground:@"barber" withParameters:@{@"barberid" : self.barber.objectId} block:^(NSString *response, NSError *error) {
         if (!error) {
@@ -26,15 +93,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
-    [self sendRequest];
+    [self addImage];
+    [self setUpLabels];
+    [self setUpBottom];
+    //[self sendRequest];
     
     // Do any additional setup after loading the view.
 }
 
--(void)addImage{
-    
-}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
